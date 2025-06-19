@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 // CORS middleware
 app.use(cors({
-  origin: 'https://multi-form-validation-nine.vercel.app' || process.env.CLIENT_URL,
+  origin: 'https://multi-form-validation-nine.vercel.app',
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true
 }))
