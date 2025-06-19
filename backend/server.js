@@ -26,7 +26,7 @@ app.options('*', cors());
 app.get('/', (req, res) => {
   res.send('API is running...')
 })
-app.use('/api', routes)
+app.use('/v1', routes)
 
 // Server 
 app.listen(process.env.PORT || 5000, () => {
