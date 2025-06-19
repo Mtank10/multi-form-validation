@@ -18,6 +18,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(cors({
   origin: 'https://multi-form-validation-nine.vercel.app',
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true
 }))
 //endpoints
 app.get('/', (req, res) => {
