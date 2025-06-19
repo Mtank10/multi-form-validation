@@ -21,6 +21,9 @@ app.use(cors({
   credentials: true
 }))
 //endpoints
+app.get('/', (req, res) => {
+  res.send('API is running...')
+})
 app.use('/api', routes)
 
 // Server 
