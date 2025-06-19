@@ -65,13 +65,14 @@ useEffect(() => {
   }
 }, [formData.state]);
   
-   const BASE_URL = 'https://multi-form-validation-fxsc.vercel.app';
+  
   useEffect(() => {
     const checkUsername = async () => {
       if (formData.username.length >= 4 && formData.username.length <= 20) {
-        const response = await fetch(`${BASE_URL}/api/check-username`, {
+        const response = await fetch('https://multi-form-validation-fxsc.vercel.app/api/check-username', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
+          
           body: JSON.stringify({ username: formData.username })
         });
         const { available } = await response.json();
@@ -154,7 +155,7 @@ useEffect(() => {
   const prevStep = () => setStep(step - 1);
 
   const handleSubmit = async () => {
-    const response = await fetch(`${BASE_URL}/api/save-profile`, {
+    const response = await fetch('https://multi-form-validation-fxsc.vercel.app/api/save-profile', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(formData)
