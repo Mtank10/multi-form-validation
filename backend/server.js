@@ -16,10 +16,13 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 // CORS middleware
 app.use(cors({
-  origin: 'https://multi-form-validation-nine.vercel.app',
-  methods: ['GET', 'POST', 'OPTIONS'],
-  allowedHeaders: ['Content-Type']
+  origin: '*',
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 }));
+
+app.options('*', cors());
+//endpoints
 app.get('/', (req, res) => {
   res.send('API is running...')
 })
