@@ -72,8 +72,6 @@ useEffect(() => {
         const response = await fetch('https://multi-form-validation-fxsc.vercel.app/api/check-username', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          AccessControlAllowOrigin: '*',
-          credentials: 'include',
           body: JSON.stringify({ username: formData.username })
         });
         const { available } = await response.json();
